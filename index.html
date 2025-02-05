@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">History</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class="mt-3 container"><span class="badge text-bg-primary">Max's Coffee Shop</span></h1>
+    <main class="container">
+      <aside class="container my-5">
+        <h3>Black Coffee</h3>
+        <div class="col-lg-8 px-0">
+              <!-- Example Code -->
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" src="img/blackcoffee.jpg" alt="black coffee">
+            <div class="card-body">
+                <h5 class="card-title">Quantity</h5>
+                <input type="number" name="coffee" id="coffee" value="0"  class="form-control" disabled>
+                <h5 class="card-title">Price</h5>
+                <input type="number" id="coffee-price" value="10" class="form-control" disabled>
+                <h5 class="card-title mt-3">Description</h5>
+                <p class="card-text"> bold and rich brew made from freshly ground coffee beans, served without milk or sugar. Perfect for those who enjoy a pure, intense coffee experience.</p>
+                <button class="btn btn-success btn-sm" onclick="addToCart('coffee');">Add to Cart</button>
+                <button class="btn btn-danger btn-sm" onclick="removeFromCart('coffee');">Remove from Cart</button>
+                <button class="btn btn-primary btn-sm mt-2" onclick="resetCart('coffee');">Reset Cart</button>
+                <input class="mt-4 form-control" type="number" id="coffee-total" value="0" disabled>
+                <h5 class="card-title">Total Price</h5>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="container my-5">
+        <h3>Americano</h3>
+        <div class="col-lg-8 px-0">
+              <!-- Example Code -->
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" src="img/americanio.jpg" alt="americano">
+            <div class="card-body">
+                <h5 class="card-title">Quantity</h5>
+                <input type="number" name="americano" id="americano" value="0" class="form-control" disabled>
+                <h5 class="card-title">Price</h5>
+                <input type="number" id="americano-price" value="18" class="form-control" disabled>
+                <h5 class="card-title mt-3">Description</h5>
+                <p class="card-text">A smooth and balanced coffee made by diluting rich espresso with hot water, creating a milder yet full-bodied flavor. Perfect for a classic, no-fuss coffee experience.</p>
+                <button class="btn btn-success btn-sm" onclick="addToCart('americano');">Add to Cart</button>
+                <button class="btn btn-danger btn-sm" onclick="removeFromCart('americano');">Remove from Cart</button>
+                <button class="btn btn-primary btn-sm mt-2" onclick="resetCart('americano');">Reset Cart</button>
+                <input class="mt-4 form-control" type="number" id="americano-total" value="0" disabled>
+                <h5 class="card-title">Total Price</h5>
+            </div>
+        </div>
+        </div>
+      </aside>
+
+      <aside class="container my-5">
+        <h3>Espresso</h3>
+        <div class="col-lg-8 px-0">
+              <!-- Example Code -->
+          <div class="card">
+            <img class="bd-placeholder-img card-img-top" src="img/espresso.jpg" alt="espresso">
+            <div class="card-body">
+                <h5 class="card-title">Quantity</h5>
+                <input type="number" name="espresso" id="espresso" value="0" class="form-control" disabled>
+                <h5 class="card-title">Price</h5>
+                <input type="number" id="espresso-price" value="22" class="form-control" disabled>
+                <h5 class="card-title">Description</h5>
+                <p class="card-text">A strong and aromatic coffee shot with a rich crema, brewed under high pressure for a bold and intense flavor. Perfect for a quick caffeine boost.</p>
+                <button class="btn btn-success btn-sm" onclick="addToCart('espresso');">Add to Cart</button>
+                <button class="btn btn-danger btn-sm" onclick="removeFromCart('espresso');">Remove from Cart</button>
+                <button class="btn btn-primary btn-sm mt-2" onclick="resetCart('espresso');">Reset Cart</button>
+                <input class="mt-4 form-control" type="number" id="espresso-total" value="0" disabled>
+                <h5 class="card-title">Total Price</h5>
+            </div>
+        </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="container sm-2">
+      <div class="col-lg-8 px-0">
+        <!-- Example Code -->
+        <div class="input-group">
+          <input type="number" name="totalSum" id="totalSum" value="0" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" disabled>
+          <span class="input-group-text">$</span>
+        </div>
+      </div>
+    </footer>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
